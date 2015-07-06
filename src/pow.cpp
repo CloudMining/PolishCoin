@@ -46,6 +46,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     int blockstogoback = Params().Interval()-1;
     if ((pindexLast->nHeight+1) != Params().Interval())
         blockstogoback = Params().Interval();
+    if (pindexLast->nHeight > 15000) {
+        blockstogoback = 4 * Params().Interval();
+    }
 
     // Go back by what we want to be 14 days worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
@@ -54,7 +57,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     assert(pindexFirst);
 
     // Limit adjustment step
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
+    int64_t nActualTimespan = 0;
+    if (pindexLast->nHeight > 15000)
+        // obtain average actual timespan
+        nActualTimespan = (pindexLast->GetBlockTime() - pindexFirst->GetBlockTime())/4;
+    else
+        nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     LogPrintf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
     if (nActualTimespan < Params().TargetTimespan()/4)
         nActualTimespan = Params().TargetTimespan()/4;
