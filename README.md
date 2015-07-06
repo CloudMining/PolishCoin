@@ -1,4 +1,4 @@
 PolishCoin
 ==========
 
-PolishCoin based on new version of Litecoin
+PolishCoin based on new version of Polishcoin
