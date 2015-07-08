@@ -44,9 +44,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "polishcoin"
+#define QAPP_ORG_NAME "Polishcoin"
 #define QAPP_ORG_DOMAIN "polishcoin.org"
-#define QAPP_APP_NAME_DEFAULT "polishcoin-Qt"
-#define QAPP_APP_NAME_TESTNET "polishcoin-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "Polishcoin-Qt"
+#define QAPP_APP_NAME_TESTNET "Polishcoin-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H
