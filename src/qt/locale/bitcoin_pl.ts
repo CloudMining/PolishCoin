@@ -221,7 +221,7 @@
     </message>
 </context>
 <context>
-    <name>PolishcoinGUI</name>
+    <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Podpisz wiado&amp;mość...</translation>
@@ -2781,7 +2781,7 @@ Adres: %4
     </message>
 </context>
 <context>
-    <name>polishcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcje:</translation>
