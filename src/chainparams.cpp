@@ -114,12 +114,6 @@ public:
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
-         * 
-         * CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
-         *   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-         *     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
-         *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
-         *   vMerkleTree: 4a5e1e
          */
         const char* pszTimestamp = "Building a coin to show the world how...";
         CMutableTransaction txNew;
@@ -144,7 +138,7 @@ public:
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(22);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(23);
-        base58Prefixes[SECRET_KEY] =     list_of(176);
+        base58Prefixes[SECRET_KEY] =     list_of(150);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
 
@@ -159,7 +153,7 @@ public:
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
 
-        // polishcoin: Mainnet v2 enforced as of block 710k
+        // polishcoin: Mainnet v2 enforced as of block 450k
         nEnforceV2AfterHeight = 450000;
     }
 
@@ -171,7 +165,7 @@ public:
 static CMainParams mainParams;
 
 /**
- * Testnet (v3)
+ * Testnet
  */
 class CTestNetParams : public CMainParams {
 public:
@@ -183,7 +177,7 @@ public:
         pchMessageStart[2] = 0xb8;
         pchMessageStart[3] = 0xdb;
         vAlertPubKey = ParseHex("0449623fc74489a947c4b15d579115591add020e53b3490bf47297dfa3762250625f8ecc2fb4fc59f69bdce8f7080f3167808276ed2c79d297054367566038aa82");
-        nDefaultPort = 45884;
+        nDefaultPort = 44823;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
