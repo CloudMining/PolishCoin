@@ -105,7 +105,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 750000;
         nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
+        nRejectBlockOutdatedMajority = 1000;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 4 * 60 * 60; // 4 hours
@@ -154,7 +154,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = false;
 
         // polishcoin: Mainnet v2 enforced as of block 450k
-        nEnforceV2AfterHeight = 450000;
+        nEnforceV2AfterHeight = 550000;
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const 
